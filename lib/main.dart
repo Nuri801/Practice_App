@@ -33,31 +33,38 @@ class PressCount extends StatefulWidget {
 class _PressCountState extends State<PressCount> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Text(
-            'You have pressed the screen',
-            style: TextStyle(
-                fontSize: 18.0,
-                color: Colors.blue,
-                fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(height: 8),
-          Text(
-            '$numberOfPresses',
-            style: const TextStyle(fontSize: 20),
-          ),
-          const SizedBox(height: 8),
-          const Text(
-            'many times',
-            style: TextStyle(
-                fontSize: 18.0,
-                color: Colors.blue,
-                fontWeight: FontWeight.bold),
-          ),
-        ],
+    return MaterialButton(
+      onPressed: () {
+        setState(() {
+          numberOfPresses++;
+        });
+      },
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              'You have pressed the screen',
+              style: TextStyle(
+                  fontSize: 18.0,
+                  color: Colors.blue,
+                  fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              '$numberOfPresses',
+              style: const TextStyle(fontSize: 20),
+            ),
+            const SizedBox(height: 8),
+            const Text(
+              'many times',
+              style: TextStyle(
+                  fontSize: 18.0,
+                  color: Colors.blue,
+                  fontWeight: FontWeight.bold),
+            ),
+          ],
+        ),
       ),
     );
   }
